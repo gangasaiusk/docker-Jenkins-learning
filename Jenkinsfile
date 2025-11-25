@@ -1,6 +1,11 @@
 pipeline {
     agent any
-
+    triggers {
+        pollSCM('* * * * *') // fallback trigger, optional
+    }
+    options {
+        skipDefaultCheckout true // prevent unwanted checkouts
+    }
     tools {
         maven 'Maven3'
        // jdk 'JDK17'
@@ -8,6 +13,9 @@ pipeline {
 
     stages {
         stage('Checkout Code') {
+            when {
+                branch 'main'
+            }
             steps {
                 git url: 'https://github.com/gangasaiusk/docker-Jenkins-learning.git', branch: 'main'
             }
