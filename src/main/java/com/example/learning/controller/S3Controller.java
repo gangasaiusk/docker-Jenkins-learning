@@ -9,6 +9,3 @@ import org.springframework.web.bind.annotation.RestController;
 public class S3Controller {
 
 }
-
-// http://localhost:8080/upload?keyName=bigfile.zip&filePath=C:/Users/Welcome/Uskcorp/New Folder.zip
-// C:\Users\Welcome\Uskcorp\gharapnaa.zip
