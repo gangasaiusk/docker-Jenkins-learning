@@ -21,7 +21,7 @@ jobs:
           java-version: '17'
 
       - name: Build (Maven)
-        run: mvn clean compile -DskipTests
+        run: mvn clean package -DskipTests
 
       - name: SonarCloud Scan
         env:
